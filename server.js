@@ -17,12 +17,12 @@ hbs.registerHelper('screamIt',(text)=>{
 	return text.toUpperCase(); 
 });
 
-app.use((req,res,next) => {
+/*app.use((req,res,next) => {
 	res.render('maintenace.hbs',{
 		Title: 'We\'ll Be Right Back',
 		para: 'Site is currently under mainatainace we\'ll be back soon'
 	});
-});
+});*/
 
 app.use((req,res,next) => {
 	var now = new Date();
@@ -37,13 +37,13 @@ app.use((req,res,next) => {
 	next();
 });
 
-/*app.get('/',(req,res) => {
+app.get('/',(req,res) => {
 	res.render('home.hbs',{
 		Title: 'Home Page',
 		currentYear: new Date().getFullYear(),
 		welcomeMessage: 'Welcome to the homepage..'
 	})
-});*/
+});
 
 app.get('/about',(req,res) => {
 	res.render('about.hbs',{
